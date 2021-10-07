@@ -1,0 +1,21 @@
+syntax = "proto3"; //定义协议为proto3
+package proto;
+option go_package = ".";
+
+message SimpleRequest{
+  // 定义发送参数，一般采用驼峰命名， 小写加下划线
+  //参数类型 参数名 标识号（不可重复）
+  string data = 1;
+}
+message SimpleResponse {
+  //定义相应的参数
+  //参数类型 参数名 标识号（不可重复）
+  int32 code = 1 ;
+  string value =2 ;
+}
+
+//定义服务方法（可定一个多个服务，每个服务定义多个接口）
+service Simple{
+  rpc Route (SimpleRequest) returns (SimpleResponse) {};
+}
+
