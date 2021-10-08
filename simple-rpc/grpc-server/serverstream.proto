@@ -17,7 +17,7 @@ message StreamResponse {
   //定义相应的参数
   //参数类型 参数名 标识号（不可重复）
   int32 code = 1 ;
-  string stream_value =2 ;
+  string stream_value =2  ;
 }
 
 //定义服务方法（可定一个多个服务，每个服务定义多个接口）
