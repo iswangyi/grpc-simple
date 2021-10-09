@@ -21,9 +21,9 @@ func (s *SimpleService) Route(ctx context.Context, req *pb.SimpleRequest) (*pb.S
 func main() {
 	listener, err := net.Listen("tcp", ":9090")
 	if err != nil {
-		log.Fatalln(err, listener)
+		log.Fatal(err)
 	}
-	log.Println("listen...")
+	log.Println("listen on 9090...")
 	grpcServer := grpc.NewServer()
 	//注册服务
 	pb.RegisterSimpleServer(grpcServer, &SimpleService{})
